@@ -1,6 +1,8 @@
+import React from 'react';
 import Layout from '../components/layout';
+import Blog from '../components/blog';
 
-export default class extends React.Component {
+class Post extends React.Component {
   // static async getInitialProps ({ req }) {
   //   // const fetch = window.fetch;
   //   // const res = await fetch('https://api.github.com/repos/zeit/next.js')
@@ -12,6 +14,10 @@ export default class extends React.Component {
   //   return ({
   //     res
   //   });
+  // }
+
+  // static getInitialProps({ req }) {
+  //   return {};
   // }
 
   render () {
@@ -29,3 +35,5 @@ console.log(slug);
     );
   }
 }
+
+export default Blog(Post);

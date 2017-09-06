@@ -1,14 +1,14 @@
 import Layout from '../components/layout';
 import React from 'react';
-import { createClient } from 'contentful';
+// import { createClient } from 'contentful';
 import Link from 'next/link';
 
-const client = createClient({
-  // This is the space ID. A space is like a project folder in Contentful terms 
-  space: '07c3fee5zt61',
-  // This is the access token for this space. Normally you get both ID and the token in the Contentful web app 
-  accessToken: '3674559aa73f2d2b5b461d97299df2df699e9a1eede74a8adb8def371c217be1'
-});
+// const client = createClient({
+//   // This is the space ID. A space is like a project folder in Contentful terms 
+//   space: '07c3fee5zt61',
+//   // This is the access token for this space. Normally you get both ID and the token in the Contentful web app 
+//   accessToken: '3674559aa73f2d2b5b461d97299df2df699e9a1eede74a8adb8def371c217be1'
+// });
 
 export default class extends React.Component {
   // static async getInitialProps ({ req }) {
@@ -28,11 +28,6 @@ export default class extends React.Component {
 
     return (
       <Layout>
-        <style jsx>{`
-          p {
-            color: red;
-          }
-        `}</style>
         <p>hello, next</p>
       </Layout>
     );
