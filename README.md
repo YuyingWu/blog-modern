@@ -1,6 +1,6 @@
 # contentful-blog
 
-Yet another blog, supported by ReactJS, Next.js, Contentful CMS.
+Yet another blog, supported by Next.js, Preact.js.
 
 ```
 // init

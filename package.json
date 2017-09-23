@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "module-alias": "^2.0.1",
-    "next": "^3.2.1",
+    "next": "latest",
     "preact": "^8.2.5",
     "preact-compat": "^3.17.0"
   },
