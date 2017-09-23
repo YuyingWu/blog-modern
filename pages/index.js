@@ -2,6 +2,8 @@ import Layout from '../components/layout';
 import React from 'react';
 // import { createClient } from 'contentful';
 import Link from 'next/link';
+import Head from 'next/head';
+import { stylesheet, classNames } from '../styles/style.css';
 
 // const client = createClient({
 //   // This is the space ID. A space is like a project folder in Contentful terms 
@@ -29,6 +31,10 @@ export default class extends React.Component {
     return (
       <Layout>
         <p>hello, next</p>
+        <p className={classNames.paragraph}>
+          <Head><style dangerouslySetInnerHTML={{__html: stylesheet}} /></Head>
+          postcss
+        </p>
       </Layout>
     );
   }

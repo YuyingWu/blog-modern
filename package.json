@@ -7,7 +7,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "export": "next build && next export"  
+    "export": "next build && next export"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,12 @@
     "contentful": "^4.6.1",
     "express": "^4.15.4",
     "react": "~15.6.1",
-    "react-dom": "~15.6.1"
+    "react-dom": "~15.6.1",
+    "cssnano": "^3.10.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-loader": "^2.0.6",
+    "postcss-modules": "^0.8.0",
+    "skeleton-loader": "^1.1.4",
+    "trash": "^4.1.0"
   }
 }
