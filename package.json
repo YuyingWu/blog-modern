@@ -7,12 +7,13 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "export": "next build && next export"  
+    "export": "next build && next export"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cxs": "^6.1.0",
     "module-alias": "^2.0.1",
     "next": "latest",
     "preact": "^8.2.5",
