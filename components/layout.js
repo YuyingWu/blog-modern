@@ -17,7 +17,10 @@ const cx = {
     }
   }),
   navTitle: cxs({
-    fontSize: '24px'
+    fontSize: '2.4rem'
+  }),
+  navCommonLink: cxs({
+    fontSize: '1.8rem'
   })
 }
 
@@ -27,14 +30,14 @@ export default ({ children }) =>
     <Link href="/">
       <a className={cx.navTitle}>伍酱</a>
     </Link>
-    <a href="/blog/">Blog</a>
+    <a href="/blog/" className={cx.navCommonLink}>Blog</a>
   </nav>
 
   <main>
     { children }
   </main>
 
-  <footer>
+  {/*<footer>
     &copy; 2014-{(new Date()).getFullYear()}
-  </footer>
+  </footer>*/}
 </div>
