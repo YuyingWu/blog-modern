@@ -21,7 +21,6 @@
     "preact-compat": "^3.17.0"
   },
   "devDependencies": {
-    "contentful": "^4.6.1",
     "express": "^4.15.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"

@@ -15,8 +15,7 @@ module.exports = {
   },
   exportPathMap: function () {
     return Object.assign({
-      "/": { page: "/" },
-      "/about": { page: "/about" }
+      "/": { page: "/" }
     }, {})
   }
 }

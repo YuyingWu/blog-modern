@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import cxs from 'cxs';
 
-const cx = {
+/*const cx = {
   root: cxs({
     width: 80,
     height: 60,
@@ -21,7 +21,7 @@ const cx = {
       color: 'white'
     }
   })
-}
+}*/
 
 export default class extends React.Component {
   render () {
@@ -29,8 +29,8 @@ export default class extends React.Component {
       <Layout>
         <p>hello, next</p>
 
-        <div className={cx.root}>
-          <h1 className={cx.title}>My page</h1>
+        <div>
+          <h1>My page</h1>
         </div>
       </Layout>
     );
