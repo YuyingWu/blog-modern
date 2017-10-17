@@ -1,36 +1,41 @@
 import Link from 'next/link';
-import cxs from 'cxs';
-
-const cx = {
-  nav: cxs({
-    width: '100%',
-    height: '56px',
-    background: '#2e928a',
-    display: 'flex',
-    justifyContent: 'space-between',
-    ' > a':{
-      lineHeight: '56px',
-      color: '#fff',
-      textDecoration: 'none',
-      paddingLeft: '12px',
-      paddingRight: '12px'
-    }
-  }),
-  navTitle: cxs({
-    fontSize: '2.4rem'
-  }),
-  navCommonLink: cxs({
-    fontSize: '1.8rem'
-  })
-}
+import { Helmet } from "react-helmet";
 
 export default ({ children }) => 
 <div>
-  <nav className={cx.nav}>
+  <style jsx global>{`
+    html{
+      font-size: 62.5%;
+    }
+    body{
+      font-size: 1.4rem;
+    }
+  `}</style>
+  <style jsx global>{`
+    nav{
+      width: 100%;
+      height: 56px;
+      background: #2e928a;
+      display: flex;
+      justify-content: space-between;
+    }
+    nav a{
+      line-height: 56px;
+      color: #fff;
+      text-decoration: none;
+      padding-left: 12px;
+      padding-right: 12px;
+      font-size: 1.8rem;
+    }
+    .navTitle{
+      font-size: 2.4rem;
+    }
+  `}</style>
+  <nav>
     <Link href="/">
-      <a className={cx.navTitle}>伍酱</a>
+      <a className="navTitle">伍酱</a>
     </Link>
-    <a href="/blog/" className={cx.navCommonLink}>Blog</a>
+    <a href="/blog/">Blog</a>
   </nav>
 
   <main>

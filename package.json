@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cxs": "^6.1.0",
     "module-alias": "^2.0.1",
     "next": "^4.0.3",
     "preact": "^8.2.5",
