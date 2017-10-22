@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 export default ({ children }) => 
 <div>
@@ -12,14 +12,14 @@ export default ({ children }) =>
     }
   `}</style>
   <style jsx global>{`
-    nav{
+    .wgt-nav{
       width: 100%;
       height: 56px;
       background: #2e928a;
       display: flex;
       justify-content: space-between;
     }
-    nav a{
+    .wgt-nav a{
       line-height: 56px;
       color: #fff;
       text-decoration: none;
@@ -31,7 +31,7 @@ export default ({ children }) =>
       font-size: 2.4rem;
     }
   `}</style>
-  <nav>
+  <nav className="wgt-nav">
     <Link href="/">
       <a className="navTitle">伍酱</a>
     </Link>

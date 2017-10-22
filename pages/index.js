@@ -1,15 +1,12 @@
 import Layout from '../components/layout';
 import React from 'react';
 import Link from 'next/link';
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 export default class extends React.Component {
   render () {
     return (
       <Layout>
-        <Helmet>
-          <title>hello</title>
-        </Helmet>
         <style jsx>{`
           img {
             display: block;
