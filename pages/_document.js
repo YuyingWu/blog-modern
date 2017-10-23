@@ -15,12 +15,17 @@ export default class MyDocument extends Document {
     const bodyAttrs = helmet.bodyAttributes.toComponent();
       
     return (
-     <html {...htmlAttrs}>
+     <html lang="zh-CN" {...htmlAttrs}>
        <Head>
          <title>吾悠杂货铺 | 伍酱</title>
+         <meta charSet="utf-8" />
+         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
          <meta name="viewport" content="width=device-width,initial-scale=1,minimal-ui"/>
-         <link href="/static/normalize.css" rel="stylesheet" />
+         <link href="/static/bootstrap.css" rel="stylesheet" />
          <link href="//at.alicdn.com/t/font_2ddoibpy163nxw29.css" rel="stylesheet" />
+         
+         <div dangerouslySetInnerHTML={{__html: "<!--[if lt IE 9]><script src=\"/static/html5shiv.js\"></script><script src=\"/static/respond.js\"></script><![endif]-->" }}/>
+      
          {helmet.title.toComponent()}
          {helmet.meta.toComponent()}
          {helmet.link.toComponent()}

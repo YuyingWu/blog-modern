@@ -11,7 +11,7 @@ export default ({ children }) =>
       font-size: 1.4rem;
     }
   `}</style>
-  <style jsx global>{`
+  <style jsx>{`
     .wgt-nav{
       width: 100%;
       height: 56px;
