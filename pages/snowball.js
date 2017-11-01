@@ -222,6 +222,13 @@ export default class extends React.Component {
             <div className="form-group bg-success gutter">
               { index + 1}
             </div>
+            <div className="form-group">
+              <select className="form-control">
+                <option>未下单</option>
+                <option>委托中</option>
+                <option>已成交</option>
+              </select>
+            </div>
           </div>
           ))}
         </form>
