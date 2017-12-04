@@ -1,6 +1,6 @@
 const express = require('express')
 const next = require('next')
-const moduleAlias = require('module-alias')
+// const moduleAlias = require('module-alias')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -8,10 +8,10 @@ const handle = app.getRequestHandler()
 
 // For the development version, we'll use React.
 // Because, it support react hot loading and so on.
-if (!dev) {
+/*if (!dev) {
   moduleAlias.addAlias('react', 'preact-compat')
   moduleAlias.addAlias('react-dom', 'preact-compat')
-}
+}*/
 
 app.prepare()
 .then(() => {
