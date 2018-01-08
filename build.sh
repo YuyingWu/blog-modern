@@ -1,1 +1,1 @@
-cp out/* ../bae/ -r
+cp -R out/* ../wyy2node/public/ 
