@@ -1,6 +1,6 @@
-# contentful-blog
+# [wuyuying.com](http://wuyuying.com)
 
-Yet another blog, supported by Next.js, Preact.js.
+Yet another site, supported by Next.js, React.js.
 
 ```
 // init
