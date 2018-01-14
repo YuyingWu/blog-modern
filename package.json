@@ -19,7 +19,8 @@
     "react-dom": "^16.0.0",
     "react-helmet": "^5.2.0",
     "react-load-script": "^0.0.6",
-    "react-radio-group": "^3.0.2"
+    "react-radio-group": "^3.0.2",
+    "superagent": "^3.8.2"
   },
   "devDependencies": {
     "express": "^4.15.4",
