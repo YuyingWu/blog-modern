@@ -38,7 +38,7 @@ export default ({ children }) =>
     <a href="/blog/">Blog</a>
   </nav>
 
-  <main>
+  <main className="container">
     { children }
   </main>
 
