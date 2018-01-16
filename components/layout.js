@@ -1,16 +1,9 @@
 import Link from 'next/link';
+import Footer from './footer';
 // import { Helmet } from "react-helmet";
 
 export default ({ children }) => 
 <div>
-  <style jsx global>{`
-    html{
-      font-size: 62.5%;
-    }
-    body{
-      font-size: 1.4rem;
-    }
-  `}</style>
   <style jsx>{`
     .wgt-nav{
       width: 100%;
@@ -41,8 +34,4 @@ export default ({ children }) =>
   <main className="container">
     { children }
   </main>
-
-  {/*<footer>
-    &copy; 2014-{(new Date()).getFullYear()}
-  </footer>*/}
 </div>

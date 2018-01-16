@@ -31,6 +31,14 @@ export default class MyDocument extends Document {
          {helmet.link.toComponent()}
        </Head>
        <body {...bodyAttrs}>
+        <style jsx global>{`
+          html{
+            font-size: 62.5%!important;
+          }
+          body{
+            font-size: 1.4rem!important;
+          }
+        `}</style>
          <Main />
          <NextScript />
        </body>
