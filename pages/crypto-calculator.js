@@ -32,6 +32,7 @@ export default class extends PureComponent {
     }
 
     this.calculate = this.calculate.bind(this);
+    this.fetchData = this.fetchData.bind(this);
     this.vert = this.vert.bind(this);
   }
 
@@ -80,12 +81,15 @@ export default class extends PureComponent {
   }
 
   fetchData() {
-    const { token } = this.state;
+    // const { token } = this.state;
+    const {
+      token: { value: tokenValue }
+    } = this;
 
     // 获取价格
     request
     .get('http://wuyuying.com/crypto/price')
-    .query({ symbol: token }) // query string
+    .query({ symbol: tokenValue }) // query string
     // .use(prefix) // Prefixes *only* this request
     // .use(nocache) // Prevents caching of *only* this request
     .end((err, res) => {
@@ -108,6 +112,7 @@ export default class extends PureComponent {
         })
       }else{
         this.setState({
+          token: tokenValue,
           price: data
         });
       }
@@ -172,6 +177,12 @@ export default class extends PureComponent {
       cashoutTimes: { value: cashoutTimesValue },
       cashoutStepPercentageStr: { value: cashoutStepPercentageStrValue }
     } = this;
+    const cashoutStepPercentageAry = cashoutStepPercentageStrValue.split(',');
+    let newCashoutSteps = cashoutStepPercentageStrValue;
+
+    if(cashoutStepPercentageAry.length !== cashoutTimesValue){
+      newCashoutSteps += ',50'.repeat(cashoutTimesValue - cashoutStepPercentageAry.length);
+    }
 
     this.setState({
       token: tokenValue,
@@ -181,11 +192,12 @@ export default class extends PureComponent {
       },
       exitPoints: {
         cashoutTimes: cashoutTimesValue,
-        cashoutStepPercentage: cashoutStepPercentageStrValue.split(',')
+        cashoutStepPercentage: newCashoutSteps.split(',')
       }
-    }, () => {
-      this.fetchData();
     });
+
+    // 手动更正input显示
+    this.cashoutStepPercentageStr.value = newCashoutSteps.split(',');
   }
 
   render() {
@@ -272,13 +284,15 @@ export default class extends PureComponent {
         <section className="bg-success gutterPadding">
           <h2>Crypto卖出计算器</h2>
           <div className="text-danger text-center gutter">
-            这里需要输入货币全称，如cardano，去<a href="https://coinmarketcap.com/" target="_blank">coinmarketcap</a>搜一下币名吧~
+            <p>Coin Name输入货币全称，如cardano，去<a href="https://coinmarketcap.com/" target="_blank">coinmarketcap</a>搜一下币名吧~</p>
+            <p>如果需要计算卖出点，先获取货币最新价格 ↑ </p>
           </div>
 
           <form className="form-inline">
             <div className="form-group">
               <label>Coin Name: </label>
               <input type="text" className="form-control" placeholder="Token" defaultValue={this.state.token} ref={i => (this.token = i)}/>
+              <div className="btn btn-primary" role="button" onClick={this.fetchData}>获取最新价格</div>
             </div>
 
             <div>
@@ -306,7 +320,7 @@ export default class extends PureComponent {
             </div>
 
             <div className="form-group">
-              <div className="btn btn-primary" role="button" onClick={this.calculate}>计算</div>
+              <div className={`btn btn-primary${(price && price.id) ? '' : ' disabled'}`} role="button" onClick={this.calculate}>计算</div>
             </div>
           </form>
 
@@ -320,7 +334,15 @@ export default class extends PureComponent {
             {price_usd * cnyusd} ￥<br/>
             {price_btc} BTC
           </p>
+          </div>
+          )
+          : errMsgShow && (
+            <div className="bg-danger text-center gutter">
+              token（币的全称）输入错误了，去<a href="https://coinmarketcap.com/" target="_blank">coinmarketcap</a>搜一下币名吧~
+            </div>
+          )}
 
+          { (price && price.id) ? <div>
           <h3>本金:</h3>
           <p>
             {totalCNY} ￥<br/>
@@ -375,13 +397,7 @@ export default class extends PureComponent {
             <span className="bg-success">现在价值：{ btcLatestTotal * btcusd * cnyusd } ￥ | { btcLatestTotal * btcusd } $ | { btcLatestTotal }BTC</span><br/>
             <span className="bg-success">现在持币：{ hodlCount }</span>
           </p>
-          </div>
-          )
-          : errMsgShow && (
-            <div className="bg-danger text-center gutter">
-              token（币的全称）输入错误了，去<a href="https://coinmarketcap.com/" target="_blank">coinmarketcap</a>搜一下币名吧~
-            </div>
-          )}
+          </div> : null }
         </section>
 
         <Footer />
