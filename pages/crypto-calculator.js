@@ -147,7 +147,7 @@ export default class extends PureComponent {
         vert = {
           btc: usdNum / btcusd,
           usd: usdNum,
-          cny: usdNum / cnyusd
+          cny: usdNum * cnyusd
         };
         break;
       case 'cny':
