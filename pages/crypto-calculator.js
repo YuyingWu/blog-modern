@@ -41,7 +41,7 @@ export default class extends PureComponent {
   basicData() {
     // 获取 美元-BTC 汇率
     request
-    .get('http://localhost:18080/crypto/price')
+    .get('http://wuyuying.com/crypto/price')
     .query({ symbol: 'bitcoin' }) // query string
     // .use(prefix) // Prefixes *only* this request
     // .use(nocache) // Prevents caching of *only* this request
@@ -60,7 +60,7 @@ export default class extends PureComponent {
 
     // 获取cny-usd汇率
     request
-    .get('http://localhost:18080/crypto/cnyusd')
+    .get('http://wuyuying.com/crypto/cnyusd')
     // .query({ action: 'edit', city: 'London' }) // query string
     // .use(prefix) // Prefixes *only* this request
     // .use(nocache) // Prevents caching of *only* this request
@@ -83,7 +83,7 @@ export default class extends PureComponent {
 
     // 获取价格
     request
-    .get('http://localhost:18080/crypto/price')
+    .get('http://wuyuying.com/crypto/price')
     .query({ symbol: token }) // query string
     // .use(prefix) // Prefixes *only* this request
     // .use(nocache) // Prevents caching of *only* this request
